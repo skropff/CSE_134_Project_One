@@ -29,8 +29,12 @@ int main(int argc, char *argv[]) {
       else {
         fd = open(argv[i], O_RDONLY);
       }
-      run1(fd);
-    }
+      if (fd != -1)  {  
+        run1(fd);
+      }
+      else {
+        fprintf(stderr, "bobcat: %s: No such file or directory\n", argv[i]);
+      }
   }
 }
       
