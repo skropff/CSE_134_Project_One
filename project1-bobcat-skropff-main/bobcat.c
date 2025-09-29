@@ -35,6 +35,7 @@ int main(int argc, char *argv[]) {
       else {
         fprintf(stderr, "bobcat: %s: No such file or directory\n", argv[i]);
       }
+    }
   }
 }
       
