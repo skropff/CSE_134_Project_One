@@ -11,7 +11,7 @@ void run1(int fd1);
 void run1(int fd1) {
   char char1;
   while (read(fd1, &char1, 1) == 1) {
-    printf("%c", &char1);
+    printf("%c", char1);
   }
 }
 
@@ -23,11 +23,11 @@ int main(int argc, char *argv[]) {
   }
   else {
     for (int i = 1; i < argc; i = i + 1) {
-      if (strcmp(argc[i], "-") == 0) {
+      if (strcmp(argv[i], "-") == 0) {
         fd = 0;
       }
       else {
-        fd = open(argc[i], O_RDONLY);
+        fd = open(argv[i], O_RDONLY);
       }
       run1(fd);
     }
