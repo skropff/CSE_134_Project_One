@@ -11,7 +11,7 @@ void run1(int fd1);
 void run1(int fd1) {
   char char1;
   while (read(fd1, &char1, 1) == 1) {
-    write(1, char1, 1);
+    write(1, &char1, 1);
   }
 }
 
