@@ -20,22 +20,18 @@ int main(int argc, char *argv[]) {
   if (argc == 1) {
     fd = 0;
     run1(fd);
-  }
-  else {
+  } else {
     for (int i = 1; i < argc; i = i + 1) {
       if (strcmp(argv[i], "-") == 0) {
         fd = 0;
-      }
-      else {
+      } else {
         fd = open(argv[i], O_RDONLY);
       }
-      if (fd != -1)  {  
+      if (fd != -1) {
         run1(fd);
-      }
-      else {
+      } else {
         fprintf(stderr, "bobcat: %s: No such file or directory\n", argv[i]);
       }
     }
   }
 }
-      
