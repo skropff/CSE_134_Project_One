@@ -17,9 +17,12 @@ void run1(int fd1) {
 
 int main(int argc, char *argv[]) {
   int fd;
+  bool return_code;
+  return_code = true;
   if (argc == 1) {
     fd = 0;
     run1(fd);
+    return 0;
   } else {
     for (int i = 1; i < argc; i = i + 1) {
       if (strcmp(argv[i], "-") == 0) {
@@ -30,8 +33,15 @@ int main(int argc, char *argv[]) {
       if (fd != -1) {
         run1(fd);
       } else {
+        return_code = false;
         fprintf(stderr, "bobcat: %s: No such file or directory\n", argv[i]);
       }
+    }
+    if (return_code == true) {
+      return 0;
+    }
+    else {
+      return 1;
     }
   }
 }
