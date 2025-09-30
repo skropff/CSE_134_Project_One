@@ -39,8 +39,7 @@ int main(int argc, char *argv[]) {
     }
     if (return_code == true) {
       return 0;
-    }
-    else {
+    } else {
       return 1;
     }
   }
